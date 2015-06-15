@@ -1,0 +1,40 @@
+#divPassagens{
+	margin: 20px;
+	width: 600px;
+}
+
+.navbar-inverse{
+	background-color: #28bbfd;
+	border-color: #24a6e0;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #FAFAF7;
+}
+
+#divData input[type=text]{
+	width: 290px;
+	float: left;
+	
+}
+
+#dataVolta{
+	margin-left: 20px;
+}
+
+#divQtdPassagens select{
+	width: 195px;
+	float: left;
+}
+
+#qtdCriancas{
+	margin-left: 7px;
+}
+
+#qtdBebes{
+	margin-left: 8px;
+}
+
+.marginTop{
+	margin-top: 5px;
+}
