@@ -12,31 +12,40 @@ Tecnologias:
 
 /db-sql-script/
 
-- Execute na ordem correta para criar a base: 
+###Execute na ordem correta para criar a base: 
 
-1_Create_Database.sql
-2_Create_Table_Usuario.sql
-3_Create_Table_Pais.sql
-4_Create_Table_Estado.sql
-5_Create_Table_Cidade.sql
+1 - Create_Database.sql
 
-- Importe o Projeto para o Eclipe JEE
+2 - Create_Table_Usuario.sql
 
-*Variables:*
+3 - Create_Table_Pais.sql
+
+4 - Create_Table_Estado.sql
+
+5 - Create_Table_Cidade.sql
+
+###Importe o Projeto para o Eclipe JEE
+
+*Variáveis:*
 
 /target/classes/config.properties
 
 MYSQL_PORT = your mysql port
+
 MYSQL_USER = your mysql user
+
 MYSQL_PASSWORD = your mysql password
 
-- Execute utilizando o Tomcat v-7
+###Execute no Eclipse
 
-- Acesse:
+Tomcat v-7.0 necessário
+
+###Acesse:
 
 http://localhost:{MYSQL_PORT}/Corvette/index.html
 
-- Dados de Login:
+###Dados de Login:
 
 USER: admin@corvetteagency.com
+
 PASSWORD: corvette-007
