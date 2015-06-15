@@ -13,7 +13,7 @@ public class Usuario {
 	@GeneratedValue
 	private int Id_Usuario;
 	private String Nome;
-	private Date Data_Nascimento;
+	private String Data_Nascimento;
 	private int Telefone;
 	private int CPF_CNPJ;
 	private String Email;
@@ -44,10 +44,10 @@ public class Usuario {
 	public void setNome(String nome) {
 		Nome = nome;
 	}
-	public Date getData_Nascimento() {
+	public String getData_Nascimento() {
 		return Data_Nascimento;
 	}
-	public void setData_Nascimento(Date data_Nascimento) {
+	public void setData_Nascimento(String data_Nascimento) {
 		Data_Nascimento = data_Nascimento;
 	}
 	public int getTelefone() {

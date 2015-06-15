@@ -14,14 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.edu.impacta.dao.DAO;
+import br.edu.impacta.dao.UsuarioDao;
 import br.edu.impacta.model.Usuario;
 
 @Controller
 public class IndexController {
-	
-	@Autowired
-	private DAO<Usuario> userDao;
 	
 	@RequestMapping("/index")
 	public ModelAndView index() {
@@ -46,10 +43,12 @@ public class IndexController {
 			user.setNome(nome);
 			user.setCPF_CNPJ(Integer.parseInt(cpfCnpj));
 			user.setEmail(email);
-//			user.setTelefone(tel);
+			user.setTelefone(3892178);
 			user.setSenha(senha);
 			
-			userDao.save(user);
+			UsuarioDao usuDao = new UsuarioDao();
+			usuDao.inserir(user);
+			
 			return "Cliente cadastrado com sucesso!";
 		}
 		catch(Exception e){
