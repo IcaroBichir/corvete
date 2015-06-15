@@ -14,7 +14,7 @@ public class Usuario {
 	private int Id_Usuario;
 	private String Nome;
 	private String Data_Nascimento;
-	private int Telefone;
+	private long Telefone;
 	private int CPF_CNPJ;
 	private String Email;
 	private String Senha;
@@ -50,10 +50,10 @@ public class Usuario {
 	public void setData_Nascimento(String data_Nascimento) {
 		Data_Nascimento = data_Nascimento;
 	}
-	public int getTelefone() {
+	public long getTelefone() {
 		return Telefone;
 	}
-	public void setTelefone(int telefone) {
+	public void setTelefone(long telefone) {
 		Telefone = telefone;
 	}
 	public int getCPF_CNPJ() {

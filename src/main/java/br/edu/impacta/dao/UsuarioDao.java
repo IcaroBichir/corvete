@@ -14,20 +14,19 @@ public class UsuarioDao implements GenericDao<Usuario>{
 	@Override
 	public void inserir(Usuario obj) throws PersistenciaException {
 		try{
-			Connection conn = ConnectionUtil.getInstance().getConnection();
-			String query = "insert into usuario(Nome, Data_Nascimento, Telefone, CPF_CNJP, Email, Senha)"
-					+ "values( ?, ?, ?, ?, ?, ? )";
+			Connection conn = new ConnectionUtil().getConection();
+			String query = "insert into usuario(Nome, Data_Nascimento, Telefone, CPF_CNPJ, Email, Senha)"
+					+ " values(?,?,?,?,?,?)";
 			
 			PreparedStatement statement = conn.prepareStatement(query);
 			statement.setString(1, obj.getNome());
-			statement.setString(2, "");
-			statement.setInt(3, obj.getTelefone());
+			statement.setString(2, obj.getData_Nascimento());
+			statement.setLong(3, obj.getTelefone());
 			statement.setInt(4, obj.getCPF_CNPJ());
 			statement.setString(5, obj.getEmail());
 			statement.setString(6, obj.getSenha());
 			
-			ResultSet result = statement.executeQuery();
-			System.out.println(result);
+			statement.execute();
 			conn.close();
 			
 		}catch(Exception e){
@@ -37,7 +36,6 @@ public class UsuarioDao implements GenericDao<Usuario>{
 				System.out.println(e.getMessage());
 			}
 		}
-		
 	}
 
 	@Override

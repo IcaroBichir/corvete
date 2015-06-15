@@ -1,7 +1,10 @@
 package br.edu.impacta.controller;
 
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
 
+import javax.jms.ConnectionFactory;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.edu.impacta.dao.UsuarioDao;
 import br.edu.impacta.model.Usuario;
+import br.edu.impacta.util.ConnectionUtil;
 
 @Controller
 public class IndexController {
@@ -33,21 +37,22 @@ public class IndexController {
 			String nome = request.getParameter("nomeCadastro");
 			String cpfCnpj = request.getParameter("cpfCnpjCadastro");
 			String email = request.getParameter("emailCadastro");
-//			String telefone = request.getParameter("telefoneCadastro").replace(")","").replace("(","").replace(" ", "").replace("-","");
+			String telefone = request.getParameter("telefoneCadastro");
 			String senha = request.getParameter("senhaCadastro");
 			String datanasc = request.getParameter("dataNascCadastro");
-//			int tel = Integer.parseInt(telefone);
+			long tel = Long.parseLong(telefone.replace(")","").replace("(","").replace(" ", "").replace("-",""));
 			System.out.println(datanasc);
 			
 			Usuario user = new Usuario();
 			user.setNome(nome);
 			user.setCPF_CNPJ(Integer.parseInt(cpfCnpj));
+			user.setData_Nascimento(datanasc);
 			user.setEmail(email);
-			user.setTelefone(3892178);
+			user.setTelefone(tel);
 			user.setSenha(senha);
 			
-			UsuarioDao usuDao = new UsuarioDao();
-			usuDao.inserir(user);
+			UsuarioDao userDao = new UsuarioDao();
+			userDao.inserir(user);
 			
 			return "Cliente cadastrado com sucesso!";
 		}

@@ -5,27 +5,29 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 
 public class ConnectionUtil {
 	
-	private static ResourceBundle config;
+private Connection conexao = null;
 	
-	private static ConnectionUtil conexaoUtil;
-	
-	private ConnectionUtil(){
-		config = ResourceBundle.getBundle("config");
-	}
-	
-	public static ConnectionUtil getInstance(){
-		if(conexaoUtil == null){
-			conexaoUtil = new ConnectionUtil();
+	public Connection getConection()
+	{
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			this.conexao =  DriverManager.getConnection("jdbc:mysql://localhost:1433/corvette", "root", "download");
+			System.out.println("Conectado");
 		}
-		return conexaoUtil;
-	}
-	
-	public Connection getConnection() throws ClassNotFoundException, SQLException{
-		Class.forName(config.getString("br.edu.impacta.driver.mysql"));
-		return DriverManager.getConnection(config.getString("br.edu.impacta.url.conexao"), 
-							config.getString("br.edu.impacta.usuario"), config.getString("br.edu.impacta.senha"));
+		catch(SQLException e)
+		{
+			System.out.println(e.getMessage());
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+		return conexao;
 	}
 }
