@@ -1,4 +1,4 @@
-# Corvette Trip agency
+# Corvette Airlines
 
 Tecnologias:
 - Java
