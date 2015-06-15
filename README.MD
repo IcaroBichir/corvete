@@ -22,6 +22,14 @@ Tecnologias:
 
 - Importe o Projeto para o Eclipe JEE
 
+*Variables:*
+
+/target/classes/config.properties
+
+MYSQL_PORT = your mysql port
+MYSQL_USER = your mysql user
+MYSQL_PASSWORD = your mysql password
+
 - Execute utilizando o Tomcat v-7
 
 - Acesse:
