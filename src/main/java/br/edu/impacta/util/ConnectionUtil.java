@@ -10,14 +10,28 @@ import javax.swing.JOptionPane;
 
 public class ConnectionUtil {
 	
-private Connection conexao = null;
+	private static ResourceBundle config;
+	private static Connection conexao = null;
+	private static ConnectionUtil conn = null;
+	
+	private ConnectionUtil(){
+		config = ResourceBundle.getBundle("config");
+	}	
+	
+	public static ConnectionUtil getInstance(){
+		if(conn == null){
+			conn = new ConnectionUtil();
+		}
+		return conn;
+	}
 	
 	public Connection getConection()
 	{
 		try
 		{
-			Class.forName("com.mysql.jdbc.Driver");
-			this.conexao =  DriverManager.getConnection("jdbc:mysql://localhost:1433/corvette", "root", "download");
+			Class.forName(config.getString("br.edu.impacta.driver.mysql"));
+			this.conexao =  DriverManager.getConnection(config.getString("br.edu.impacta.url.conexao"),
+					config.getString("br.edu.impacta.usuario"), config.getString("br.edu.impacta.senha"));
 			System.out.println("Conectado");
 		}
 		catch(SQLException e)

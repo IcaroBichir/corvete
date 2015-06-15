@@ -14,7 +14,7 @@ public class UsuarioDao implements GenericDao<Usuario>{
 	@Override
 	public void inserir(Usuario obj) throws PersistenciaException {
 		try{
-			Connection conn = new ConnectionUtil().getConection();
+			Connection conn = ConnectionUtil.getInstance().getConection();
 			String query = "insert into usuario(Nome, Data_Nascimento, Telefone, CPF_CNPJ, Email, Senha)"
 					+ " values(?,?,?,?,?,?)";
 			
