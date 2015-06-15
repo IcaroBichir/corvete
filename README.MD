@@ -31,7 +31,9 @@ Tecnologias:
 /target/classes/config.properties
 
 MYSQL_PORT = your mysql port
+
 MYSQL_USER = your mysql user
+
 MYSQL_PASSWORD = your mysql password
 
 ###Execute no Eclipse
