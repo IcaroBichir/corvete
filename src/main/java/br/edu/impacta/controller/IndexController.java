@@ -61,10 +61,10 @@ public class IndexController {
 		}
 	}
 	
-	@RequestMapping("/teste")
+	@RequestMapping("/login")
 	@ResponseBody
-	public String teste(){
-		System.out.println("teste");
-		return "teste";
+	public String Login(HttpServletRequest request){
+		return "Sucesso";
 	}
+	
 }
