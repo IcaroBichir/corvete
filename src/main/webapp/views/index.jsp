@@ -43,10 +43,10 @@
 				<legend>Escolha sua passagem</legend>
 				
 				<div class="span8 marginTop">
-					<label for="cidadeOrigem" class="marginTop">Cidade de origem</label>
+					<label for="cidadeOrigem" class="marginTop"></label>
 					<input type="text" class="form-control marginTop" placeholder="Cidade de origem" id="cidadeOrigem"/>
 					
-					<label for="cidadeDestino marginTop">Cidade de destino</label>
+					<label for="cidadeDestino marginTop"></label>
 					<input type="text" class="form-control marginTop" placeholder="Cidade de destino" id="cidadeDestino"/>
 					
 					<!-- Div para selecionar data de ida e volta -->
@@ -57,6 +57,7 @@
 					<!-- Div com quantidade de passagens -->
 					<div class="span8 marginTop" id="divQtdPassagens" class="marginTop">
 						<select class="form-control marginTop" id="qtdAdultos">
+							<option value="0">Quantidade de adultos</option>
 							<option value="0">0</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -70,6 +71,7 @@
 						</select>
 						
 						<select class="form-control marginTop" id="qtdCriancas">
+							<option value="0">Quantidade de criancas</option>
 							<option value="0">0</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -83,6 +85,7 @@
 						</select>
 						
 						<select class="form-control marginTop" id="qtdBebes">
+							<option value="0">Quantidade de bebes</option>
 							<option value="0">0</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
