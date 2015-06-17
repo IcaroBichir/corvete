@@ -8,4 +8,4 @@ target/
 
 #local db config#
 #################
-src/main/java/config.properties
+*/config.properties
