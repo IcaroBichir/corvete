@@ -1,5 +1,6 @@
 package br.edu.impacta.controller;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -7,6 +8,7 @@ import java.sql.PreparedStatement;
 import javax.jms.ConnectionFactory;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,7 +33,7 @@ public class IndexController {
 	
 	@RequestMapping("/cadastroCliente")
 	@ResponseBody
-	public String cadastroCliente(HttpServletRequest request){		
+	public String cadastroCliente(HttpServletRequest request, HttpServletResponse response){		
 		try
 		{
 			String nome = request.getParameter("nomeCadastro");
@@ -52,19 +54,37 @@ public class IndexController {
 			user.setSenha(senha);
 			
 			UsuarioDao userDao = new UsuarioDao();
-			userDao.inserir(user);
-			
-			return "Cliente cadastrado com sucesso!";
+			return userDao.inserir(user);
 		}
 		catch(Exception e){
-			return "Erro ao efetuar cadastro. Erro: " + e.getMessage();
+			return e.getMessage();
 		}
 	}
 	
 	@RequestMapping("/login")
 	@ResponseBody
-	public String Login(HttpServletRequest request){
-		return "Sucesso";
+	public String Login(HttpServletRequest request, HttpServletResponse respose){
+		try{
+			String userName = request.getParameter("username");
+			String passWord = request.getParameter("password");
+			
+			//Cria objeto 
+			Usuario user = new Usuario();
+			user.setEmail(userName);
+			user.setSenha(passWord);
+			
+			//Faz a consulta do usuario
+			UsuarioDao userDao = new UsuarioDao();
+			if(userDao.busca(user).size() > 0){
+				HttpSession session = request.getSession();
+				session.setAttribute("userName", userName);
+				session.setAttribute("passWord", passWord);
+				return "Sucesso";
+			}else
+				return "Sucesso";			
+				
+		}catch(Exception e){
+			return null;
+		}
 	}
-	
 }

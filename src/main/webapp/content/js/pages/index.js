@@ -28,7 +28,25 @@ function cadastroCliente(){
 			type: "POST",
 			url: url,
 			success: function(result) {
-				alert(result);
+				if(result == ""){
+					$('#nomeCadastro')[0].value = "";
+					$('#cpfCnpjCadastro')[0].value = "";
+					$('#dataNascCadastro')[0].value = "";
+					$('#telefoneCadastro')[0].value = ""; 
+					$('#emailCadastro')[0].value = "";
+					$('#senhaCadastro')[0].value = "";
+					$('#modelCadastro').modal('hide');
+					alert("Cadastro Efetuado com sucesso.");
+				}else{
+					$('#nomeCadastro')[0].value = "";
+					$('#cpfCnpjCadastro')[0].value = "";
+					$('#dataNascCadastro')[0].value = "";
+					$('#telefoneCadastro')[0].value = ""; 
+					$('#emailCadastro')[0].value = "";
+					$('#senhaCadastro')[0].value = "";
+					$('#modelCadastro').modal('hide');
+					alert(result);
+				}
 			},
 		});
 	}

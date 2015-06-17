@@ -6,13 +6,13 @@ import br.edu.impacta.exception.PersistenciaException;
 
 public interface GenericDao<T> {
 	
-	void inserir(T obj) throws PersistenciaException;
+	String inserir(T obj) throws PersistenciaException;
 	
-	void atualiza(T obj) throws PersistenciaException;
+	String atualiza(T obj) throws PersistenciaException;
 	
-	void deletar(Integer id) throws PersistenciaException;
+	String deletar(Integer id) throws PersistenciaException;
 	
 	List<T> listarTodos() throws PersistenciaException;
 	
-	T buscarPorId(Integer id) throws PersistenciaException;
+	List<T> busca(T obj) throws PersistenciaException;
 }
