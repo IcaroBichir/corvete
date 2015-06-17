@@ -16,11 +16,11 @@ VALUES ('admin', '10/10/1910', '11912340987', '35498218720', 'admin', 'admin@cor
 create table Pais(
 	Id_Pais int not null auto_increment,
     Nome varchar(100),
-    paisName varchar(100),
+    PaisName varchar(100),
     constraint PK_Pais_Id_Pais Primary Key(Id_Pais)
 );
 
-INSERT INTO Pais (Id_Pais, Nome, paisName) VALUES
+INSERT INTO Pais (Id_Pais, Nome, PaisName) VALUES
 (1, 'AFEGANISTÃO', 'AFGHANISTAN'),
 (2, 'ACROTÍRI E DECELIA', 'AKROTIRI E DEKÉLIA'),
 (3, 'ÁFRICA DO SUL', 'SOUTH AFRICA'),

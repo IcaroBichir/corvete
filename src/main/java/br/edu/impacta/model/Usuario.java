@@ -16,6 +16,7 @@ public class Usuario {
 	private String Data_Nascimento;
 	private long Telefone;
 	private int CPF_CNPJ;
+	private String Admin;
 	private String Email;
 	private String Senha;
 	
@@ -61,6 +62,12 @@ public class Usuario {
 	}
 	public void setCPF_CNPJ(int cPF_CNPJ) {
 		CPF_CNPJ = cPF_CNPJ;
+	}
+	public String getAdmin() {
+		return Admin;
+	}
+	public void setAdmin(String admin) {
+		Admin = admin;
 	}
 	
 }
