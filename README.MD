@@ -28,7 +28,9 @@ Tecnologias:
 
 *Variáveis:*
 
-/target/classes/config.properties
+target/classes/config.properties
+
+src/main/java/config.properties
 
 MYSQL_PORT = your mysql port
 
