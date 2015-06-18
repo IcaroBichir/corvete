@@ -14,15 +14,9 @@ Tecnologias:
 
 ###Execute na ordem correta para criar a base: 
 
-1 - Create_Database.sql
+1 - Create_Schema.sql
 
-2 - Create_Table_Usuario.sql
-
-3 - Create_Table_Pais.sql
-
-4 - Create_Table_Estado.sql
-
-5 - Create_Table_Cidade.sql
+2 - Create_Database.sql
 
 ###Importe o Projeto para o Eclipe JEE
 
@@ -40,7 +34,7 @@ MYSQL_PASSWORD = your mysql password
 
 ###Execute no Eclipse
 
-Tomcat v-7.0 necessário
+Tomcat v-7.0 é necessário
 
 ###Acesse:
 

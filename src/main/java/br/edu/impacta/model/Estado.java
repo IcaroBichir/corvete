@@ -22,6 +22,15 @@ public class Estado {
 	private int Id_Pais;
 	
 	private String Nome;
+	private String Sigla;
+
+	public String getSigla() {
+		return Sigla;
+	}
+
+	public void setSigla(String sigla) {
+		Sigla = sigla;
+	}
 
 	public int getId_Estado() {
 		return Id_Estado;
