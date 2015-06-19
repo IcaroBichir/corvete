@@ -3,15 +3,6 @@
 	width: 600px;
 }
 
-.navbar-inverse{
-	background-color: #28bbfd;
-	border-color: #24a6e0;
-}
-
-.navbar-inverse .navbar-brand {
-	color: #FAFAF7;
-}
-
 #divData input[type=text]{
 	width: 290px;
 	float: left;
@@ -37,4 +28,28 @@
 
 .marginTop{
 	margin-top: 10px;
+}
+
+
+#btnPesquisar{
+	width: 600px;
+	font-size: 19px;
+	margin-top: 5px;
+	font-weight: bold;
+}
+
+#btnPesquisar span{
+	top: -2px;
+}
+
+legend{
+	display: block;
+	width: 100%;
+	padding: 0;
+	/* margin-bottom: 20px; */
+	font-size: 21px;
+	line-height: inherit;
+	color: #333;
+	border: 0;
+	border-bottom: 1px solid #e5e5e5;
 }

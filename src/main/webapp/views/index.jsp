@@ -4,7 +4,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="<c:url value="/content/css/bootstrap/bootstrap.min.css" />">
-<link rel="stylesheet" href="<c:url value="/content/css/pages/index.css" />"> 
+<link rel="stylesheet" href="<c:url value="/content/css/pages/index.css" />">
+<link rel="stylesheet" href="<c:url value="/content/css/pages/header.css" />">  
 <link rel="stylesheet" href="<c:url value="/content/css/jquery/jquery-ui.css" />">
 <script src="<c:url value="/content/js/jquery/jquery-2.1.4.min.js" />"></script>
 <script src="<c:url value="/content/js/jquery/jquery-ui.min.js" />"></script>
@@ -80,6 +81,9 @@
 							<option value="9">9</option>
 						</select>
 					</div>
+					<button type="button" class="btn btn-success" aria-label="Left Align" id="btnPesquisar">
+				  		<span class="glyphicon glyphicon-search" aria-hidden="true"> Pesquisar </span>
+					</button>
 				</div>
 			</fieldset>
 		</div>
@@ -96,7 +100,7 @@
 		</div>
 	</div>
 	<footer>
-		<p>@ Corvette Airlines 2015
+		<c:import url="footer.jsp"></c:import>
 	</footer>
 </div>
 	
