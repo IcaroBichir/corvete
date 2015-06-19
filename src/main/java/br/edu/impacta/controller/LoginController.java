@@ -30,11 +30,11 @@ public class LoginController {
 			UsuarioDao userDao = new UsuarioDao();
 			if(userDao.busca(user).size() > 0){
 				HttpSession session = request.getSession();
-				session.setAttribute("userName", userName);
-				session.setAttribute("passWord", passWord);
+				session.setAttribute("username", userName);
+				session.setAttribute("password", passWord);
 				return "Sucesso";
 			}else
-				return "Sucesso";			
+				return "Usuario ou senha invalido";			
 
 		}catch(Exception e){
 			return null;

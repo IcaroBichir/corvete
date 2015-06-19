@@ -14,7 +14,7 @@ Tecnologias:
 
 ###Execute na ordem correta para criar a base: 
 
-1 - Create_Schema.sql
+1 - Create_Squema.sql
 
 2 - Create_Database.sql
 
@@ -22,9 +22,7 @@ Tecnologias:
 
 *Variáveis:*
 
-target/classes/config.properties
-
-src/main/java/config.properties
+/target/classes/config.properties
 
 MYSQL_PORT = your mysql port
 

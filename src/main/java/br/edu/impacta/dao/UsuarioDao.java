@@ -80,7 +80,7 @@ public class UsuarioDao implements GenericDao<Usuario>{
 				statement.setLong(1, obj.getCPF_CNPJ());
 				statement.setString(2, obj.getEmail());
 			}else{
-				query = "select  from usuario where Email = ? and Senha = ?";
+				query = "select * from usuario where Email = ? and Senha = ?";
 				statement = conn.prepareStatement(query);
 				statement.setString(1, obj.getEmail());
 				statement.setString(2, obj.getSenha());

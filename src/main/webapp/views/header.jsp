@@ -21,9 +21,12 @@
 			    <label class="sr-only" for="passLogin">Password</label>
 			    <input type="password" class="form-control" id="passLogin" placeholder="Password">
 			  </div>
-		  		<button type="submit" class="btn btn-primary">Sign in</button>
+		  		<button type="submit" class="btn btn-primary" onclick="login()">Sign in</button>
 				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modelCadastro">Cadastro</button>
 			</form>
+			<div id="welcomeLogin" style="display:none;">
+				<span class="glyphicon glyphicon-user">Bem vindo</span>
+			</div>
 		</div>
 	</div>
 </body>
