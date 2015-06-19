@@ -1,4 +1,4 @@
-package br.edu.impacta.controller;
+package br.edu.impacta.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

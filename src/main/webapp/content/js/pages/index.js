@@ -55,14 +55,7 @@ function cadastroCliente(){
 }
 
 
-function teste(){
-	$.ajax({
-		url: '/Corvette/teste?',
-		sucess: function(result){
-			alert('sucesso');
-		}
-	});
-}
+
 
 
 

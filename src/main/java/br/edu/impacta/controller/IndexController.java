@@ -60,31 +60,4 @@ public class IndexController {
 			return e.getMessage();
 		}
 	}
-	
-	@RequestMapping("/login")
-	@ResponseBody
-	public String Login(HttpServletRequest request, HttpServletResponse respose){
-		try{
-			String userName = request.getParameter("username");
-			String passWord = request.getParameter("password");
-			
-			//Cria objeto 
-			Usuario user = new Usuario();
-			user.setEmail(userName);
-			user.setSenha(passWord);
-			
-			//Faz a consulta do usuario
-			UsuarioDao userDao = new UsuarioDao();
-			if(userDao.busca(user).size() > 0){
-				HttpSession session = request.getSession();
-				session.setAttribute("userName", userName);
-				session.setAttribute("passWord", passWord);
-				return "Sucesso";
-			}else
-				return "Sucesso";			
-				
-		}catch(Exception e){
-			return null;
-		}
-	}
 }

@@ -11,10 +11,10 @@ import javax.persistence.EntityManager;
 import javax.swing.plaf.TextUI;
 
 import antlr.StringUtils;
-import br.edu.impacta.controller.Criptografia;
 import br.edu.impacta.exception.PersistenciaException;
 import br.edu.impacta.model.Usuario;
 import br.edu.impacta.util.ConnectionUtil;
+import br.edu.impacta.util.Criptografia;
 
 public class UsuarioDao implements GenericDao<Usuario>{
 
