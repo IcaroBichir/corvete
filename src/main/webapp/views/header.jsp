@@ -12,7 +12,7 @@
 			<a class="navbar-brand" href="#">Corvette Airlines</a> 
 		</div>
 		<div class="navbar-collapse collapse" id="navbar">
-			<form class="navbar-form navbar-right">
+			<form class="navbar-form navbar-right" id="formLogin">
 			  <div class="form-group">
 			    <label class="sr-only" for="userLogin">Login</label>
 			    <input type="email" class="form-control" id="userLogin" placeholder="Enter login">
