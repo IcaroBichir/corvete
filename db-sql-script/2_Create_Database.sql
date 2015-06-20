@@ -10042,10 +10042,24 @@ create table Passagem(
 );
 
 create table Voo(
-  Id_Voo int not null auto_increment,
-  Id_Cidade integer not null,
-  Data_Saida datetime not null,
-  Data_Chegada datetime not null,
-  constraint PK_Voo_Id_Voo primary key(Id_Voo),
-  constraint FK_Cidade_Id_Cidade foreign key(Id_Cidade) references Cidade(Id_Cidade)
+ Id_Voo int not null auto_increment,
+ Id_Cidade_Origem int not null,
+ Id_Cidade_Destino int not null,
+ Data_Saida varchar(12) not null,
+ Data_Chegada varchar(12) not null,
+ constraint PK_Voo_Id_Voo primary key(Id_Voo),
+ constraint FK_Cidade_Id_Cidade_Origem foreign key(Id_Cidade_Origem) references Cidade(Id_Cidade),
+ constraint FK_Cidade_Id_Cidade_Destino foreign key(Id_Cidade_Destino) references Cidade(Id_Cidade)
 );
+
+INSERT INTO Voo (Id_Cidade_Origem, Data_Saida, Id_Cidade_Destino, Data_Chegada) VALUES (2312, "01/07/2015", 7374, "19/07/2015");
+INSERT INTO Voo (Id_Cidade_Origem, Data_Saida, Id_Cidade_Destino, Data_Chegada) VALUES (3860, "02/07/2015", 5917, "21/07/2015");
+INSERT INTO Voo (Id_Cidade_Origem, Data_Saida, Id_Cidade_Destino, Data_Chegada) VALUES (6528, "28/07/2015", 9396, "12/08/2015");
+INSERT INTO Voo (Id_Cidade_Origem, Data_Saida, Id_Cidade_Destino, Data_Chegada) VALUES (9714, "30/07/2015", 1232, "02/08/2015");
+INSERT INTO Voo (Id_Cidade_Origem, Data_Saida, Id_Cidade_Destino, Data_Chegada) VALUES (0004, "14/08/2015", 0112, "20/08/2015");
+INSERT INTO Voo (Id_Cidade_Origem, Data_Saida, Id_Cidade_Destino, Data_Chegada) VALUES (0543, "27/08/2015", 9361, "03/09/2015");
+INSERT INTO Voo (Id_Cidade_Origem, Data_Saida, Id_Cidade_Destino, Data_Chegada) VALUES (0014, "01/09/2015", 5981, "12/09/2015");
+INSERT INTO Voo (Id_Cidade_Origem, Data_Saida, Id_Cidade_Destino, Data_Chegada) VALUES (0764, "01/09/2015", 0740, "21/09/2015");
+INSERT INTO Voo (Id_Cidade_Origem, Data_Saida, Id_Cidade_Destino, Data_Chegada) VALUES (0002, "22/09/2015", 0063, "25/09/2015");
+INSERT INTO Voo (Id_Cidade_Origem, Data_Saida, Id_Cidade_Destino, Data_Chegada) VALUES (0371, "29/09/2015", 7531, "03/10/2015");
+
