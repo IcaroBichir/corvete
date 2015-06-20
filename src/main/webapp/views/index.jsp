@@ -54,7 +54,7 @@
 						</select>
 						
 						<select class="form-control marginTop" id="qtdCriancas">
-							<option value="0">Quantidade de criancas</option>
+							<option value="0">Criancas, maiores de 3 anos</option>
 							<option value="0">0</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -68,7 +68,7 @@
 						</select>
 						
 						<select class="form-control marginTop" id="qtdBebes">
-							<option value="0">Quantidade de bebes</option>
+							<option value="0">Criancas, menores de 3 anos</option>
 							<option value="0">0</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
