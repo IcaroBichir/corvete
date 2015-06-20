@@ -1,3 +1,4 @@
+<%@page import="br.edu.impacta.model.Usuario"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE>
 <html>
@@ -12,7 +13,7 @@
 			<a class="navbar-brand" href="index">Corvette Airlines</a> 
 		</div>
 		<div class="navbar-collapse collapse" id="navbar">
-			<form class="navbar-form navbar-right" id="formLogin">
+			<form class="navbar-form navbar-right" id="formLogin" action="" method="post">
 			  <div class="form-group">
 			    <label class="sr-only" for="userLogin">Login</label>
 			    <input type="email" class="form-control" id="userLogin" placeholder="Enter login">
@@ -25,7 +26,8 @@
 				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modelCadastro">Cadastro</button>
 			</form>
 			<div id="welcomeLogin" style="display:none;">
-				<span class="glyphicon glyphicon-user">Bem vindo: <strong><%= session.getAttribute("login") %></strong><br></span>
+				<span class="glyphicon glyphicon-user">Bem vindo: 
+				<strong> <% out.println(session.getValue("user")); %>	</strong><br></span>
 			</div>
 		</div>
 	</div>

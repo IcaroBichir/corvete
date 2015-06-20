@@ -96,6 +96,7 @@ public class UsuarioDao implements GenericDao<Usuario>{
 				user.setCPF_CNPJ(result.getLong("CPF_CNPJ"));
 				user.setData_Nascimento(result.getString("Data_Nascimento"));
 				user.setEmail(result.getString("Email"));
+				System.out.println(result.getString("Nome"));
 				user.setNome(result.getString("Nome"));
 				user.setId_Usuario(result.getInt("Id_usuario"));
 				user.setSenha(result.getString("Senha"));

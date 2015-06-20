@@ -6,17 +6,15 @@ function login(){
 	$.ajax({
 		type: "POST",
 		url: url,
-		success: function(result) {
-			alert(result);
-			if ( true ) {
-				$('#formLogin')[0].style.display = 'none';
-				System.out.Println("Login realizado com Sucesso")
-			} else {
-				$('#formLogin')[0].style.display = 'block';
-				System.out.Println("Falha no login")
-			}
-			
-		}
-		
+		success: function(data, textStatus, jqXHR)
+	    {
+			if (jqXHR.status != 200){
+				alert(textStatus);
+			} 
+	    },
+	    error: function (jqXHR, textStatus, errorThrown)
+	    {
+	    	alert(errorThrown);
+	    }
 	});
 }
