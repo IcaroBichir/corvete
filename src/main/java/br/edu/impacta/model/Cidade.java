@@ -17,6 +17,7 @@ public class Cidade {
 	@JoinColumn(name = "Id_Estado")
 	public int Id_Estado;
 	public String Nome;
+	
 	public int getId_Cidade() {
 		return Id_Cidade;
 	}

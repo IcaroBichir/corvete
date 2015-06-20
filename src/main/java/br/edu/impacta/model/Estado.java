@@ -20,7 +20,6 @@ public class Estado {
 	@ManyToOne
 	@JoinColumn(name = "Id_Pais")
 	private int Id_Pais;
-	
 	private String Nome;
 	private String Sigla;
 

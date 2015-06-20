@@ -17,7 +17,8 @@ public class Voo {
 	
 	@ManyToOne
 	@JoinColumn(name = "Id_Cidade")
-	public int Id_Cidade;
+	public int Id_Cidade_Origem;
+	public int Id_Cidade_Destino;
 	public Date Data_Saida;
 	public Date Data_Chegada;
 	
@@ -28,11 +29,17 @@ public class Voo {
 	public void setId_Voo(int id_Voo) {
 		Id_Voo = id_Voo;
 	}
-	public int getId_Cidade() {
-		return Id_Cidade;
+	public int getId_Cidade_Origem() {
+		return Id_Cidade_Origem;
 	}
-	public void setId_Cidade(int id_Cidade) {
-		Id_Cidade = id_Cidade;
+	public void setId_Cidade_Origem(int id_Cidade_Origem) {
+		Id_Cidade_Origem = id_Cidade_Origem;
+	}
+	public int getId_Cidade_Destino() {
+		return Id_Cidade_Destino;
+	}
+	public void setId_Cidade_Destino(int id_Cidade_Destino) {
+		Id_Cidade_Destino = id_Cidade_Destino;
 	}
 	public Date getData_Saida() {
 		return Data_Saida;
