@@ -8,6 +8,14 @@ function login(){
 		url: url,
 		success: function(result) {
 			alert(result);
-		},
+			if ( success ) {
+				$('#formLogin')[0].style.display = 'none';
+				System.out.Println("Login realizado com Sucesso")
+			} else {
+				$('#formLogin')[0].style.display = 'block';
+			}
+			
+		}
+		
 	});
 }
