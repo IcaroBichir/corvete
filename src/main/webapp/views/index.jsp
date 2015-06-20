@@ -93,13 +93,13 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-		dasdsa
+ 		 	<img src="content/images/add_02.jpg">
 		</div>
 		<div class="col-md-4">
-		dasdsa
-		</div>
+<!-- 			<img src="content/images/add_02.jpg">
+ -->		</div>
 		<div class="col-md-4">
-		dasdsa
+			<img src="content/images/add_03.jpg">
 		</div>
 	</div>
 	<footer>
