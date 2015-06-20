@@ -19,8 +19,8 @@ public class LoginController extends HttpServlet {
 	@ResponseBody
 	public String Login(HttpServletRequest request, HttpServletResponse response){
 		try{
-			
 			HttpSession session = request.getSession();
+			session.invalidate();
 			
 			String userName = request.getParameter("username");
 			String passWord = request.getParameter("password");
@@ -35,11 +35,11 @@ public class LoginController extends HttpServlet {
 			if(userDao.busca(user).size() > 0){
 				session.setAttribute("user", user.getNome());
 				return "Sucesso";
-			}else
-				return "Usuario ou senha invalido";			
+			} else
+				return "Usuario ou senha invalido.";			
 
 		}catch(Exception e){
-			return null;
+			return "Não foi possivel efetaur o login. Erro: " + e.getMessage();
 		}
 	}
 }
