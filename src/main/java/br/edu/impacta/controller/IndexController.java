@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.util.List;
 
 import javax.jms.ConnectionFactory;
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.edu.impacta.dao.UsuarioDao;
 import br.edu.impacta.model.Usuario;
+import br.edu.impacta.model.Voo;
 import br.edu.impacta.util.ConnectionUtil;
 
 @Controller
@@ -31,9 +33,16 @@ public class IndexController {
 		return new ModelAndView("index");
 	}
 	
+	@RequestMapping("/buscaPassagens")
+	@ResponseBody
+	public List<Voo> BuscaPassagens(HttpServletRequest request, HttpServletResponse response){
+	
+		return null;
+	}
+	
 	@RequestMapping("/cadastroCliente")
 	@ResponseBody
-	public String cadastroCliente(HttpServletRequest request, HttpServletResponse response){		
+	public String CadastroCliente(HttpServletRequest request, HttpServletResponse response){		
 		try
 		{
 			String nome = request.getParameter("nomeCadastro");

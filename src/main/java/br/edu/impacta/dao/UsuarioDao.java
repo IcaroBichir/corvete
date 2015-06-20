@@ -24,7 +24,7 @@ public class UsuarioDao implements GenericDao<Usuario>{
 			Connection conn = ConnectionUtil.getInstance().getConection();
 			String query = "insert into usuario(Nome, Data_Nascimento, Telefone, CPF_CNPJ, Email, Senha)"
 					+ " values(?,?,?,?,?,?)";
-			if(busca(obj).size() <= 0)
+			if(busca(obj) != null)
 			{
 				PreparedStatement statement = conn.prepareStatement(query);
 				statement.setString(1, obj.getNome());
@@ -67,7 +67,7 @@ public class UsuarioDao implements GenericDao<Usuario>{
 
 
 	@Override
-	public List<Usuario> busca(Usuario obj) throws PersistenciaException {
+	public Usuario busca(Usuario obj) throws PersistenciaException {
 		try{
 			
 			Connection conn = ConnectionUtil.getInstance().getConection();
@@ -75,12 +75,12 @@ public class UsuarioDao implements GenericDao<Usuario>{
 			PreparedStatement statement;
 			
 			if(obj.getEmail() == "" || obj.getEmail() == null ){
-				query = "select * from usuario where CPF_CNPJ = ? and Email = ?";	
+				query = "select * from usuario where CPF_CNPJ = ? and Email = ?  limit 1";	
 				statement = conn.prepareStatement(query);
 				statement.setLong(1, obj.getCPF_CNPJ());
 				statement.setString(2, obj.getEmail());
 			}else{
-				query = "select * from usuario where Email = ? and Senha = ?";
+				query = "select * from usuario where Email = ? and Senha = ? limit 1";
 				statement = conn.prepareStatement(query);
 				statement.setString(1, obj.getEmail());
 				statement.setString(2, obj.getSenha());
@@ -88,11 +88,9 @@ public class UsuarioDao implements GenericDao<Usuario>{
 			
 			ResultSet result = statement.executeQuery();
 			
-			//Cria lista com objeto
-			List<Usuario> list = new ArrayList<Usuario>();
-			Usuario user;
+			Usuario user = new Usuario();
 			while(result.next()){
-				user = new Usuario();
+				
 				user.setCPF_CNPJ(result.getLong("CPF_CNPJ"));
 				user.setData_Nascimento(result.getString("Data_Nascimento"));
 				user.setEmail(result.getString("Email"));
@@ -101,10 +99,10 @@ public class UsuarioDao implements GenericDao<Usuario>{
 				user.setId_Usuario(result.getInt("Id_usuario"));
 				user.setSenha(result.getString("Senha"));
 				user.setTelefone(result.getLong("Telefone"));
-				list.add(user);
+				user.setAdmin(result.getString("Admin"));
 			}
 			
-			return list;
+			return user;
 			
 		}catch(Exception e){
 			try {

@@ -27,7 +27,7 @@
 			</form>
 			<div id="welcomeLogin" style="display:none;">
 				<span class="glyphicon glyphicon-user">Bem vindo: 
-				<strong> <% out.println(session.getValue("user")); %>	</strong><br></span>
+				<strong> <% out.println(session.getAttribute("user")); %>	</strong><br></span>
 			</div>
 		</div>
 	</div>

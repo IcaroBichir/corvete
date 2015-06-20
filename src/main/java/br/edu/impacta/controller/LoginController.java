@@ -1,5 +1,7 @@
 package br.edu.impacta.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +22,6 @@ public class LoginController extends HttpServlet {
 	public String Login(HttpServletRequest request, HttpServletResponse response){
 		try{
 			HttpSession session = request.getSession();
-			session.invalidate();
 			
 			String userName = request.getParameter("username");
 			String passWord = request.getParameter("password");
@@ -32,13 +33,16 @@ public class LoginController extends HttpServlet {
 			
 			//Faz a consulta do usuario
 			UsuarioDao userDao = new UsuarioDao();
-			if(userDao.busca(user).size() > 0){
+			user = userDao.busca(user);
+			if(user != null){
+				System.out.println(user.getNome());
 				session.setAttribute("user", user.getNome());
 				return "Sucesso";
 			} else
 				return "Usuario ou senha invalido.";			
 
 		}catch(Exception e){
+			System.out.println(e.getMessage());
 			return "Não foi possivel efetaur o login. Erro: " + e.getMessage();
 		}
 	}

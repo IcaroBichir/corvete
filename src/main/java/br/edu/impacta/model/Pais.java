@@ -11,7 +11,6 @@ public class Pais {
 	@GeneratedValue
 	private int Id_Pais;
 	private String Nome;
-	private String PaisName;
 	
 	public int getId_Pais() {
 		return Id_Pais;
@@ -25,11 +24,4 @@ public class Pais {
 	public void setNome(String nome) {
 		Nome = nome;
 	}
-	public String getPaisName() {
-		return PaisName;
-	}
-	public void setPaisName(String paisName) {
-		PaisName = paisName;
-	}
-	
 }

@@ -14,5 +14,5 @@ public interface GenericDao<T> {
 	
 	List<T> listarTodos() throws PersistenciaException;
 	
-	List<T> busca(T obj) throws PersistenciaException;
+	T busca(T obj) throws PersistenciaException;
 }
