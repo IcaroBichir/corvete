@@ -9,3 +9,4 @@ target/
 #local db config#
 #################
 */config.properties
+*/pom.properties
