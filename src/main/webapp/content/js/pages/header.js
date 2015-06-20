@@ -8,11 +8,12 @@ function login(){
 		url: url,
 		success: function(result) {
 			alert(result);
-			if ( success ) {
+			if ( true ) {
 				$('#formLogin')[0].style.display = 'none';
 				System.out.Println("Login realizado com Sucesso")
 			} else {
 				$('#formLogin')[0].style.display = 'block';
+				System.out.Println("Falha no login")
 			}
 			
 		}
