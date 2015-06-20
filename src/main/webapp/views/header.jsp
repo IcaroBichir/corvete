@@ -9,7 +9,7 @@
 <body>
 <div class="container" id="headerContainer">
 		<div>
-			<a class="navbar-brand" href="#">Corvette Airlines</a> 
+			<a class="navbar-brand" href="index">Corvette Airlines</a> 
 		</div>
 		<div class="navbar-collapse collapse" id="navbar">
 			<form class="navbar-form navbar-right" id="formLogin">
@@ -25,7 +25,7 @@
 				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modelCadastro">Cadastro</button>
 			</form>
 			<div id="welcomeLogin" style="display:none;">
-				<span class="glyphicon glyphicon-user">Bem vindo</span>
+				<span class="glyphicon glyphicon-user">Bem vindo: <strong><%= session.getAttribute("login") %></strong><br></span>
 			</div>
 		</div>
 	</div>

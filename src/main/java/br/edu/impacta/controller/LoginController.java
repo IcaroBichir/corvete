@@ -1,5 +1,6 @@
 package br.edu.impacta.controller;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -12,12 +13,15 @@ import br.edu.impacta.dao.UsuarioDao;
 import br.edu.impacta.model.Usuario;
 
 @Controller
-public class LoginController {
+public class LoginController extends HttpServlet {
 	
 	@RequestMapping("/login")
 	@ResponseBody
-	public String Login(HttpServletRequest request, HttpServletResponse respose){
+	public String Login(HttpServletRequest request, HttpServletResponse response){
 		try{
+			
+			HttpSession session = request.getSession();
+			
 			String userName = request.getParameter("username");
 			String passWord = request.getParameter("password");
 			
@@ -29,9 +33,7 @@ public class LoginController {
 			//Faz a consulta do usuario
 			UsuarioDao userDao = new UsuarioDao();
 			if(userDao.busca(user).size() > 0){
-				HttpSession session = request.getSession();
-				session.setAttribute("username", userName);
-				session.setAttribute("password", passWord);
+				session.setAttribute("user", user.getNome());
 				return "Sucesso";
 			}else
 				return "Usuario ou senha invalido";			

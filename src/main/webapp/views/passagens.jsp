@@ -22,12 +22,30 @@
 <div class="jumbotron">
 	<div class="container">
 		<div class="row row-fluid" id="divResultPassagens">
-			<fieldset>
-				<legend>ESCOLHA SEU VOO</legend>
-				
-				<li><input type="radio" /></li><li>Teste</li><li>TESTE</li>
-				</ul>
-			</fieldset>
+			<div class="panel panel-primary">
+			  <div class="panel-heading"></div>
+			  <div class="panel-body">
+			    <table class="table table-striped">
+					<thead>
+						<th><span class="glyphicon glyphicon-plane colorAviaoSai"></span></th>
+						<th>Sai</th>
+						<th>Chega</th>
+						<th>Companhia</th>
+						<th>Paradas</th>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row"><input type="checkbox" /></th>
+							<td>dasdas</td>
+							<td>dsadsa</td>
+							<td>asds</td>
+							<td>asds</td>
+						</tr>
+					</tbody>
+				</table>
+			  </div>
+			</div>
+			
 		</div>
 	</div>
 </div>

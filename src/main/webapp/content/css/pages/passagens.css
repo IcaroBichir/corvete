@@ -3,3 +3,19 @@
 	width: 800px;
 	margin-top: 30px;
 }
+
+.panel-primary{
+	border-color: #28BBFD;
+
+}
+
+.panel-primary>.panel-heading {
+	color: #fff;
+	background-color: #28BBFD;
+	border-color: #28BBFD;
+}
+
+.colorAviaoSai{
+	color: #28BBFD;
+	transform: rotate(30deg);
+}
