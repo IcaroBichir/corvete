@@ -101,7 +101,8 @@ public class UsuarioDao implements GenericDao<Usuario>{
 				user.setTelefone(result.getLong("Telefone"));
 				user.setAdmin(result.getString("Admin"));
 			}
-			
+			conn.close();
+			conn = null;
 			return user;
 			
 		}catch(Exception e){
@@ -112,6 +113,13 @@ public class UsuarioDao implements GenericDao<Usuario>{
 				e1.printStackTrace();
 			}
 		}
+		return null;
+	}
+
+
+	@Override
+	public List<Usuario> listarTodos(Usuario obj) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 }

@@ -48,10 +48,41 @@ function cadastroCliente(){
 					alert(result);
 				}
 			},
+			error: function (jqXHR, textStatus, errorThrown)
+		    {
+				alert(textStatus);
+		    }			
 		});
 	}
 	else
 		alert('senhaInvalida');
+}
+
+
+function BuscaPassagens(){
+	var cidadeOrigem = $('#cidadeOrigem')[0].value;
+	var cidadeDestino = $('#cidadeDestino')[0].value;
+	var dataIda = $('#dataIda')[0].value;
+	var dataVolta = $('#dataVolta')[0].value;
+	
+	if(cidadeOrigem != '' && cidadeDestino != '' && dataIda != '' && dataVolta != ''){
+		var url = '/Corvette/buscaPassagens?cidadeOrigem='+ cidadeOrigem + '&cidadeDestino=' + cidadeDestino 
+					+ '&dataIda=' + dataIda +'&dataVolta=' +dataVolta;
+		$.ajax({
+			type: "POST",
+			url: url,
+			success: function(data, textStatus, jqXHR)
+		    {
+				if (jqXHR.status == 200){
+					
+				}
+		    },
+		    error: function (jqXHR, textStatus, errorThrown)
+		    {
+		    	alert(errorThrown);
+		    }
+		});
+	}
 }
 
 

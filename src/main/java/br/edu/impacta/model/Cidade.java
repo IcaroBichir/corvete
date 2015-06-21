@@ -11,12 +11,12 @@ public class Cidade {
 
 	@Id
 	@GeneratedValue
-	public int Id_Cidade;
+	private int Id_Cidade;
 	
 	@ManyToOne
 	@JoinColumn(name = "Id_Estado")
-	public int Id_Estado;
-	public String Nome;
+	private int Id_Estado;
+	private String Nome;
 	
 	public int getId_Cidade() {
 		return Id_Cidade;

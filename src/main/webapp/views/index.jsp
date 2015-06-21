@@ -37,51 +37,8 @@
 						<input type="text" class="form-control marginTop" placeholder="Data de ida" id="dataIda" /> 
 						<input type="text" class="form-control marginTop" placeholder="Data de volta" id="dataVolta" />
 					</div>
-					<!-- Div com quantidade de passagens -->
-					<div class="span8 marginTop" id="divQtdPassagens" class="marginTop">
-						<select class="form-control marginTop" id="qtdAdultos">
-							<option value="0">Quantidade de adultos</option>
-							<option value="0">0</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-						</select>
-						
-						<select class="form-control marginTop" id="qtdCriancas">
-							<option value="0">Criancas, maiores de 3 anos</option>
-							<option value="0">0</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-						</select>
-						
-						<select class="form-control marginTop" id="qtdBebes">
-							<option value="0">Criancas, menores de 3 anos</option>
-							<option value="0">0</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-						</select>
-					</div>
-					<button type="button" class="btn btn-success" aria-label="Left Align" id="btnPesquisar">
+					
+					<button type="button" class="btn btn-success" aria-label="Left Align" id="btnPesquisar" onclick="BuscaPassagens()">
 				  		<span class="glyphicon glyphicon-search" aria-hidden="true"> Pesquisar </span>
 					</button>
 				</div>
