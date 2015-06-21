@@ -20,9 +20,12 @@ Tecnologias:
 
 ###Importe o Projeto para o Eclipe JEE
 
-*Variáveis:*
+*Substitua as variáveis pelas configurações do seu Mysql:*
 
-/target/classes/config.properties
+target/classes/config.properties
+
+src/main/java/config.properties
+
 
 MYSQL_PORT = your mysql port
 
@@ -30,7 +33,7 @@ MYSQL_USER = your mysql user
 
 MYSQL_PASSWORD = your mysql password
 
-###Execute no Eclipse
+###Execute o projeto no Eclipse
 
 Tomcat v-7.0 é necessário
 
@@ -43,3 +46,7 @@ http://localhost:{MYSQL_PORT}/Corvette/index.html
 USER: admin@corvetteagency.com
 
 PASSWORD: corvette-007
+
+###Regras de Negócio no arquivo markdown:
+
+Regras_de_negocio.md
